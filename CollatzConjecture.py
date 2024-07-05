@@ -7,7 +7,7 @@ def cc(x):
     print(x)
     
     #Calcultion loop
-    while 1==1:
+    while x != 1:
         time.sleep(0.02)
         
         #if x is less than or equal to 0
@@ -22,8 +22,7 @@ def cc(x):
             x = x / 2
             print(int(x))
                      
-cc(x) #please change x to a number value
-
+cc(x)
 """
 The Collatz Conjecture, also known as the 
 "3n + 1" sequence, proposes that starting with any positive number and applying two rules 
