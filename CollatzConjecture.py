@@ -1,12 +1,13 @@
 #collatz conjecture by @Noulion
-import time 
+import time
+from termcolor import colored as css 
 
 
 #conjecture-calculator
 def cc(x):
-    print(x)
+    print(css(x, 'green', attrs=['bold']))
     
-    #Calcultion loop
+    #Calcultion loop, while x isn't 1 do the following:
     while x != 1:
         time.sleep(0.02)
         
@@ -16,13 +17,22 @@ def cc(x):
         #if x is not even then do 3x+1
         if (x % 2) != 0:
             x = x*3+1
-            print(int(x))
+            print(css(int(x), 'green', attrs=['bold']))
         #if x is even then divide by 2
         else:
             x = x / 2
-            print(int(x))
-                     
-cc(x)
+            print(css(int(x), 'green', attrs=['bold']))
+
+#main-body
+def main():
+    while True:
+        try:
+            cc_x = int(input('Type a number to calculate: '))
+            if cc_x == cc_x:
+                cc(cc_x)
+        except ValueError:
+            print('Number only')
+main()
 """
 The Collatz Conjecture, also known as the 
 "3n + 1" sequence, proposes that starting with any positive number and applying two rules 
